@@ -14,6 +14,7 @@ echo "  force:               ${INPUT_FORCE}"
 echo "  no_edit:             ${INPUT_NO_EDIT}"
 echo "  organization_domain: ${INPUT_ORGANIZATION_DOMAIN}"
 echo "  target_branch:       ${INPUT_TARGET_BRANCH}"
+echo "  repository:          ${INPUT_REPOSITORY}"
 
 # Require github_token
 if [[ -z "${GITHUB_TOKEN}" ]]; then
@@ -26,7 +27,7 @@ fi
 # Set git credentials
 git config --global safe.directory "${GITHUB_WORKSPACE}"
 git config --global safe.directory /github/workspace
-git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${INPUT_ORGANIZATION_DOMAIN}/${GITHUB_REPOSITORY}"
+git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${INPUT_ORGANIZATION_DOMAIN}/${INPUT_REPOSITORY}"
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.${INPUT_ORGANIZATION_DOMAIN}"
 
