@@ -38,6 +38,10 @@ inputs:
     description: Name of a new branch to push the code into
     required: false
     default: ""
+  repository:
+    description: Name of the repository to commit to
+    required: false
+    default: ""
 outputs:
   files_changed:
     description: List of changed files
