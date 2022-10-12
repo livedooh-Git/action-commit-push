@@ -77,8 +77,8 @@ if [[ -n ${FILES_CHANGED} ]]; then
 fi
 
 # Rebase
-echo "[INFO] Rebase to target branch"
-git checkout origin "${BRANCH}"
+echo "[INFO] Rebase to target branch ${BRANCH}"
+git pull
 
 # Push
 if [[ "${INPUT_FORCE}" == "true" ]]; then
