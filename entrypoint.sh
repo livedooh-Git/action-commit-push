@@ -76,6 +76,9 @@ if [[ -n ${FILES_CHANGED} ]]; then
   fi
 fi
 
+# Rebase
+git checkout origin ${BRANCH}
+
 # Push
 if [[ "${INPUT_FORCE}" == "true" ]]; then
   echo "[INFO] Force pushing changes"
