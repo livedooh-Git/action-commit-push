@@ -15,6 +15,7 @@ echo "  no_edit:             ${INPUT_NO_EDIT}"
 echo "  organization_domain: ${INPUT_ORGANIZATION_DOMAIN}"
 echo "  target_branch:       ${INPUT_TARGET_BRANCH}"
 echo "  repository:          ${INPUT_REPOSITORY}"
+echo "  env:                 ${INPUT_ENV}"
 
 # Require github_token
 if [[ -z "${GITHUB_TOKEN}" ]]; then
@@ -76,9 +77,12 @@ if [[ -n ${FILES_CHANGED} ]]; then
   fi
 fi
 
-# Rebase
-echo "[INFO] Rebase to target branch ${BRANCH}"
-git pull
+if [[ "${TARGET_ENV}" == "app-livedooh" ]];
+then
+  # Rebase
+  echo "[INFO] Rebase to target branch ${BRANCH}"
+  git pull
+fi
 
 # Push
 if [[ "${INPUT_FORCE}" == "true" ]]; then
