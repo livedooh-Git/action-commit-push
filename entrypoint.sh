@@ -77,7 +77,7 @@ if [[ -n ${FILES_CHANGED} ]]; then
   fi
 fi
 
-if [[ "${TARGET_ENV}" == "app-livedooh" ]];
+if [[ "${INPUT_ENV}" == "app-livedooh" ]];
 then
   # Rebase
   echo "[INFO] Rebase to target branch ${BRANCH}"
