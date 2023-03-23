@@ -5,7 +5,7 @@ set -e
 # Return code
 RET_CODE=0
 
-INPUT_ADD_TIMESTAMP=true
+#INPUT_ADD_TIMESTAMP=true
 
 echo "Inputs:"
 echo "  add_timestamp:       ${INPUT_ADD_TIMESTAMP}"
