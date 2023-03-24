@@ -42,6 +42,10 @@ inputs:
     description: Name of the repository to commit to
     required: false
     default: ""
+  date_timestamp:
+    description: The timestamp to add to the branch
+    required: false
+    default: ""    
 outputs:
   files_changed:
     description: List of changed files
