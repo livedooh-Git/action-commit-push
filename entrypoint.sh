@@ -18,6 +18,7 @@ echo "  organization_domain: ${INPUT_ORGANIZATION_DOMAIN}"
 echo "  target_branch:       ${INPUT_TARGET_BRANCH}"
 echo "  repository:          ${INPUT_REPOSITORY}"
 echo "  deploy_env:          ${INPUT_DEPLOY_ENV}"
+echo "  date_timestamp:      ${INPUT_DATE_TIMESTAMP}"
 
 # Require github_token
 if [[ -z "${GITHUB_TOKEN}" ]]; then
@@ -54,6 +55,10 @@ if [[ "${INPUT_ADD_TIMESTAMP}" == "true" && -n ${FILES_CHANGED} ]]; then
     BRANCH="${TIMESTAMP}"
   fi
 fi
+
+# Adding the timestamp to the branch
+BRANCH="${INPUT_TARGET_BRANCH}-${INPUT_DATE_TIMESTAMP}"
+
 echo -e "\n[INFO] Target branch: ${BRANCH}"
 
 # Create a new branch
