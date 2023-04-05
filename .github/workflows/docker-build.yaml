@@ -2,7 +2,7 @@ name: Build action-commit-push
 
 on: 
   push:
-    branches: [master]
+    branches: [develop]
 
 jobs:
   build:
@@ -18,4 +18,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: livedooh/action-commit-push:latest
+          tags: livedooh/action-commit-push:develop
