@@ -57,7 +57,7 @@ if [[ "${INPUT_ADD_TIMESTAMP}" == "true" && -n ${FILES_CHANGED} ]]; then
 fi
 
 # Adding the timestamp to the branch
-BRANCH="${INPUT_TARGET_BRANCH}-${INPUT_DATE_TIMESTAMP}"
+BRANCH="${INPUT_TARGET_BRANCH}"
 
 echo -e "\n[INFO] Target branch: ${BRANCH}"
 
